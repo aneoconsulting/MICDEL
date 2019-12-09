@@ -1,0 +1,22 @@
+
+#include <tuple>
+#include <map>
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using Tcontainer = std::map<std::tuple<<%=(['int'] * n).join(', ')%>>, double>;
+
+    Tcontainer container{};
+
+    for (int i = 0; i < 10; ++i) {
+        container[{i <%= (n > 1 ? "," : "" ) + ([0] * (n-1)).join(',')%>}] = 1.0;
+    }
+
+#endif
+
+    return 0;
+}
+
+

@@ -1,0 +1,23 @@
+
+#include "../Implem/boost_multi_array/boost_multi_array.hpp"
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using namespace NIndexedContainer;
+    using Tcontainer = 
+        n_indexed<
+            double, 
+            boost_multi_array_storage,
+            indexes< <%=(['int'] * n).join(', ')%> >,
+            traits<random_access_trait, size_trait>
+        >;
+    
+    Tcontainer container{<%=([10] * n).join(', ') %>};
+#endif
+
+    return 0;
+}
+
+

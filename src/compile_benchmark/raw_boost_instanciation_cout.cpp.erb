@@ -1,0 +1,15 @@
+
+#include <boost/multi_array.hpp>
+#include <iostream>
+
+int main() {
+#if defined(METABENCH)
+	using namespace boost;
+    using Tcontainer = multi_array<double, <%= n %>>;
+    Tcontainer container{boost::extents<%='[10]' * n%>};
+
+
+    std::cout << container.num_elements() << std::endl;
+  
+#endif
+}

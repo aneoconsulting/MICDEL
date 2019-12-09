@@ -1,0 +1,17 @@
+
+#include <tuple>
+#include <map>
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using Tcontainer = std::map<std::tuple<<%=(['int'] * n).join(', ')%>>, double>;
+
+    Tcontainer container{};
+#endif
+
+    return 0;
+}
+
+

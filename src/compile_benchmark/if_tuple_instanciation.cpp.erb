@@ -1,0 +1,24 @@
+
+#include "../Implem/tuple_map/tuple_map.hpp"
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using namespace NIndexedContainer;
+    using Tcontainer = 
+        n_indexed<
+            double, 
+            map_tuple_storage,
+            indexes< <%=(['int'] * n).join(', ')%> >,
+            traits<random_access_trait, size_trait>
+        >;
+    
+    Tcontainer container{};
+    
+#endif
+
+    return 0;
+}
+
+

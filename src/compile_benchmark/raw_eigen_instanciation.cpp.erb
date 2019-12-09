@@ -1,0 +1,14 @@
+
+#include <Eigen/Core>
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using Tcontainer = Eigen::Matrix<double, Eigen::Dynamic, <%= n == 1 ? "1" : "Eigen::Dynamic" %> >; 
+    Tcontainer container{<%=([10] * n).join(', ') %>};
+#endif
+
+    return 0;
+}
+

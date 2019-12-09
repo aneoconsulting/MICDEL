@@ -1,0 +1,23 @@
+
+#include "../Implem/eigen_matrix/eigen_matrix.hpp"
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using namespace NIndexedContainer;
+    using Tcontainer = 
+        n_indexed<
+            double, 
+            eigen_matrix_storage,
+            indexes< <%=(['int'] * n).join(', ')%> >,
+            traits<random_access_trait, size_trait>
+        >;
+    
+    Tcontainer container{<%=([10] * n).join(', ') %>};
+#endif
+
+    return 0;
+}
+
+

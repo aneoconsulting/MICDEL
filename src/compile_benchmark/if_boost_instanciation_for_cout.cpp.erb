@@ -1,0 +1,30 @@
+
+#include "../Implem/boost_multi_array/boost_multi_array.hpp"
+#include <iostream>
+
+int main() 
+{
+
+#if defined(METABENCH)
+    using namespace NIndexedContainer;
+    using Tcontainer = 
+        n_indexed<
+            double, 
+            boost_multi_array_storage,
+            indexes< <%=(['int'] * n).join(', ')%> >,
+            traits<random_access_trait, size_trait>
+        >;
+    
+    Tcontainer container{<%=([10] * n).join(', ') %>};
+
+    for (int i = 0; i < 10; ++i) {
+        container(i <%= (n > 1 ? "," : "" ) + ([0] * (n-1)).join(',')%>) = 1.0; 
+    }
+
+    std::cout << container.size() << std::endl;
+#endif
+
+    return 0;
+}
+
+
