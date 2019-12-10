@@ -1,6 +1,6 @@
-# MICDEL
+# elmic
 
-Stands for **M**uti **I**ndexed **C**ontainer **D** escription **E** mbedded **L**anguage
+Stands for **e**mbedded **l**anguage for **m**ulti **i**ndex **c**ontainer
 
 __THIS IS PROOF OF CONCEPT AND WORK IS IN PROGRESS__
 
